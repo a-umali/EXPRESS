@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+<body>
+
+<h2>Calculator</h2>
+
+<input type="text" id="display" readonly>
+
+<br><br>
+<button onclick="doMath('0')">0</button>
+<button onclick="doMath('1')">1</button>
+<button onclick="doMath('2')">2</button>
+<button onclick="doMath('3')">3</button>
+
+<br>
+
+<button onclick="doMath('4')">4</button>
+<button onclick="doMath('5')">5</button>
+<button onclick="doMath('6')">6</button>
+
+<br>
+
+<button onclick="doMath('7')">7</button>
+<button onclick="doMath('8')">8</button>
+<button onclick="doMath('9')">9</button>
+
+<br>
+
+<button onclick="doMath('-')">-</button>
+<button onclick="doMath('*')">*</button>
+<button onclick="doMath('+')">+</button>
+<button onclick="doMath('/')">/</button>
+<br>
+
+<br>
+<button onclick="clearDisplay()">Clear</button>
+<button onclick="calculate()">=</button>
+<br>
+
+<script>
+    function doMath(value) {
+        document.getElementById('display').value += value;
+    }
+
+    function clearDisplay() {
+        document.getElementById('display').value = '';
+    }
+
+    function calculate() {
+        var display = document.getElementById('display').value;
+        var result = eval(display);
+        document.getElementById('display').value = result;
+    }
+</script>
+
+</body>
+</html>
